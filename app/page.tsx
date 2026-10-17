@@ -1,9 +1,15 @@
+import Hero from "../components/Hero";
+import ExperienceGrid from "../components/ExperienceGrid";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-brand-earth">
-      <h1 className="text-4xl font-heading text-brand-emerald font-bold">
-        Plataforma de Turismo Activo
-      </h1>
+    <main className="min-h-screen">
+      <Hero />
+      <ExperienceGrid />
+      <Contact />
+      <Footer />
     </main>
   );
 }
