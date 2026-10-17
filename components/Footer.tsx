@@ -8,8 +8,7 @@ export default function Footer() {
         <span>TurismoActivo</span>
       </div>
       <p className="opacity-80 text-sm">
-        © {new Date().getFullYear()} Proyecto Universitario. Todos los derechos
-        reservados.
+        © 2026 Proyecto Experiencias de Viaje. Todos los derechos reservados.
       </p>
     </footer>
   );
