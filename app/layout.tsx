@@ -1,28 +1,30 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import { usePathname } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
-
-export const metadata: Metadata = {
-  title: "Aventuras y Turismo Activo",
-  description:
-    "Descubre experiencias únicas, conecta con la naturaleza y reserva tu próxima aventura.",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+
+  // Lista de rutas donde NO queremos que aparezca el Navbar público
+  const isProtectedPath =
+    pathname?.startsWith("/login") || pathname?.startsWith("/admin");
+
   return (
     <html lang="es">
       <body
         className={`${inter.variable} ${syne.variable} font-sans bg-brand-earth text-gray-900 antialiased`}
       >
-        <Navbar />
+        {!isProtectedPath && <Navbar />}
         {children}
       </body>
     </html>
