@@ -27,7 +27,7 @@ export default function LoginPage() {
       setError("Credenciales incorrectas. Verifica tu correo y contraseña.");
       setLoading(false);
     } else {
-      // Si el login es exitoso, redirigimos al futuro panel de control
+      setLoading(false);
       router.push("/admin/reservas");
     }
   };
